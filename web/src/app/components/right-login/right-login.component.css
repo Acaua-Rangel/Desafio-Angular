@@ -1,0 +1,10 @@
+.right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+}
+
+.right-image {
+    height: 100px;
+}
