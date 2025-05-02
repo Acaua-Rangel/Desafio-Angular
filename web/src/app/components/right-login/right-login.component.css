@@ -6,5 +6,15 @@
 }
 
 .right-image {
-    height: 100px;
+    width: 290px;
+}
+
+@media (max-width:800px) {
+    .right-image {
+        width: 40vw;
+    }
+
+    .right {
+        gap: 30px;
+    }
 }
