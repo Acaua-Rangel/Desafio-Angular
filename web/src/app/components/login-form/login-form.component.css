@@ -27,3 +27,8 @@ button {
     color: white;
     font-weight: bold;
 }
+
+#message-error {
+    display: none;
+    color: red;
+}

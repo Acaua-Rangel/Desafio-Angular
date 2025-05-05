@@ -3,5 +3,6 @@
     <input type="text" id="login" placeholder="Digite seu username aqui" required>
     <label for="password">Senha</label>
     <input type="password" id="password" placeholder="Digite sua senha aqui" required>
-    <button type="submit">Conectar</button>
+    <p id="message-error">Nome de usuário e/ou senha incorreto(s)</p>
+    <button type="button" (click)="submit($event)">Conectar</button>
 </form>
