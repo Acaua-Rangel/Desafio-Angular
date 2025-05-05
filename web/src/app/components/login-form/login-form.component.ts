@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { User } from '../../dto/user.dto';
+import { LoginDTO, User } from '../../dto/user.dto';
 
 @Component({
   selector: 'app-login-form',
@@ -43,7 +43,7 @@ export class LoginFormComponent implements OnInit {
     const login = (<HTMLInputElement>document.getElementById('login')).value;
     const password = (<HTMLInputElement>document.getElementById('password')).value;
 
-    const body = {
+    const body: LoginDTO = {
       nome: login,
       senha: password,
     };

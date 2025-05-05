@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RightLoginComponent } from '../right-login/right-login.component';
+import { RightLoginComponent } from '../../components/right-login/right-login.component'; 
 
 @Component({
   selector: 'app-login-page',

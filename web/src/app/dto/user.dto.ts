@@ -3,3 +3,8 @@ export interface User {
     nome: string,
     email: string
 }
+
+export interface LoginDTO {
+    nome: string,
+    senha: string
+}
