@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RightLoginComponent } from '../../components/right-login/right-login.component'; 
+import isLogged from '../../services/islogged.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login-page',
@@ -7,6 +9,13 @@ import { RightLoginComponent } from '../../components/right-login/right-login.co
   templateUrl: './login-page.component.html',
   styleUrl: './login-page.component.css'
 })
-export class LoginPageComponent {
+export class LoginPageComponent implements OnInit {
+  constructor(private router: Router) {}
 
+  ngOnInit(): void {
+    if (isLogged()) {
+      console.log("oi")
+      this.router.navigate(['/']);
+    }
+  }
 }

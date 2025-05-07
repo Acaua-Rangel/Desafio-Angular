@@ -10,5 +10,9 @@ export const routes: Routes = [
     {
         path: 'login',
         component: LoginPageComponent
+    },
+    {
+        path: 'dashboard',
+        component: WelcomePageComponent
     }
 ];

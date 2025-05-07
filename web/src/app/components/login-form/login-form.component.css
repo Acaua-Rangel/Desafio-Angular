@@ -2,16 +2,18 @@ form {
     display: flex;
     flex-direction: column;
     align-items: start;
+    width: 30vw;
 }
 
 input {
-    width: 40vw;
+    width: 100%;
     height: 30px;
     border-radius: 10px;
     padding-left: 10px;
     padding-right: 10px;
     border: 2px solid #CCCCCC;
     margin-bottom: 15px;
+    background-color: white;
 }
 
 button {
@@ -31,4 +33,10 @@ button {
 #message-error {
     display: none;
     color: red;
+}
+
+@media (max-width: 550px) {
+    form {
+        width: 100%;
+    }
 }

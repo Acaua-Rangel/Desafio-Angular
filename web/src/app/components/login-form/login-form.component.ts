@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component} from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { LoginDTO, User } from '../../dto/user.dto';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login-form',
@@ -8,33 +9,18 @@ import { LoginDTO, User } from '../../dto/user.dto';
   templateUrl: './login-form.component.html',
   styleUrl: './login-form.component.css'
 })
-export class LoginFormComponent implements OnInit {
-  constructor(private http: HttpClient) {}
+export class LoginFormComponent {
+  constructor(private http: HttpClient, private router: Router) {}
 
-  ngOnInit(): void {
-    console.log(this.userIsSaved());
-  }
-
-  messageError(show: boolean): void {
+  private messageError(show: boolean): void {
     const messsageError = document.getElementById('message-error') as HTMLElement;
     messsageError.style.display = `${show ? 'block' : 'none'}`;
   };
 
-  saveUser(user: User): void {
-    localStorage.setItem("id", user.id.toString());
-    localStorage.setItem("nome", user.nome);
-    localStorage.setItem("email", user.email);
-  }
-
-  userIsSaved(): boolean {
-    const id = localStorage.getItem("id");
-    const nome = localStorage.getItem("nome");
-    const email = localStorage.getItem("email");
-
-    if (id && nome && email) {
-      return true;
-    }
-    return false;
+  private saveUser(user: User): void {
+    sessionStorage.setItem("id", user.id.toString());
+    sessionStorage.setItem("nome", user.nome);
+    sessionStorage.setItem("email", user.email);
   }
 
   submit(event: Event): void {
@@ -56,6 +42,7 @@ export class LoginFormComponent implements OnInit {
         this.messageError(false);
         this.saveUser(res as User);
         console.log(res);
+        this.router.navigate(['/']);
       },
       error: (err) => this.messageError(true)
     });
