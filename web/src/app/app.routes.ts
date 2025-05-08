@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import { LoginPageComponent } from './page/login-page/login-page.component';
 import { WelcomePageComponent } from './page/welcome-page/welcome-page.component';
+import { DashboardComponent } from './page/dashboard/dashboard.component';
 
 export const routes: Routes = [
     {
@@ -16,6 +17,6 @@ export const routes: Routes = [
     {
         path: 'dashboard',
         title: 'Ford - Painel de Controle',
-        component: WelcomePageComponent
+        component: DashboardComponent
     }
 ];

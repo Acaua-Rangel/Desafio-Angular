@@ -1,8 +1,12 @@
 <form>
-    <label for="login">Login</label>
-    <input type="text" id="login" placeholder="Digite seu username aqui" required>
-    <label for="password">Senha</label>
-    <input type="password" id="password" placeholder="Digite sua senha aqui" required>
+    <div class="form-floating">
+        <input type="text" id="login" class="form-control" placeholder="Digite seu username aqui" required>
+        <label for="login">Login</label>
+    </div>
+    <div class="form-floating">
+        <input type="password" id="password" class="form-control" placeholder="Digite sua senha aqui" required>
+        <label for="password">Senha</label>
+    </div>
     <p id="message-error">Nome de usuário e/ou senha incorreto(s)</p>
     <button type="button" (click)="submit($event)">Conectar</button>
 </form>

@@ -35,6 +35,10 @@ button {
     color: red;
 }
 
+.form-floating {
+    width: 100%;
+}
+
 @media (max-width: 550px) {
     form {
         width: 100%;
