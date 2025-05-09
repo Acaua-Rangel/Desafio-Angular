@@ -1,7 +1,8 @@
 import { Component} from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { LoginDTO, User } from '../../dto/user.dto';
+import { User } from '../../dto/user.dto';
 import { Router } from '@angular/router';
+import { LoginDTO } from '../../dto/login.dto';
 
 @Component({
   selector: 'app-login-form',
