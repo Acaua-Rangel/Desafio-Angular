@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CardComponent } from '../card/card.component';
-import { FormBuilder, FormGroup } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { vehicle } from '../../dto/vehicle.dto';
 
 @Component({
   selector: 'app-car-model',
@@ -11,10 +11,10 @@ import { HttpClient } from '@angular/common/http';
 })
 export class CarModelComponent implements OnInit {
   constructor(private http: HttpClient) {}
-  
-  sells = "--";
-  conects = "--";
-  updates = "--";
+
+  index = -1;
+
+  data: vehicle[] = [];
 
   ngOnInit(): void {
     this.fetchData();
@@ -26,22 +26,49 @@ export class CarModelComponent implements OnInit {
     const selectedValue = selectElement.value;
     
     if (selectedValue) {
-      this.fetchData();
+      this.index = Number(selectedValue);
     }
   }
 
-  fetchData() {
+  private fetchData() {
     // Substitua pela sua URL de API
     const apiUrl = `http://localhost:3001/vehicles`;
     
-    this.http.get(apiUrl).subscribe({
+    this.http.get<vehicle[]>(apiUrl).subscribe({
       next: (response) => {
-        console.log('Dados recebidos:', response);
-        // Faça algo com os dados aqui
+        this.data = response as vehicle[];
       },
       error: (err) => {
         console.error('Erro na requisição:', err);
       }
     });
+  }
+  
+  get sells(): string {
+    if (this.index >= 0 && this.index < Object.keys(this.data).length) {
+      return this.data[this.index].volumetotal.toString();
+    } 
+    return "--"
+  }
+
+  get conects(): string {
+    if (this.index >= 0 && this.index < Object.keys(this.data).length) {
+      return this.data[this.index].connected.toString();
+    } 
+    return "--"
+  }
+
+  get updates(): string {
+    if (this.index >= 0 && this.index < Object.keys(this.data).length) {
+      return this.data[this.index].softwareUpdates.toString();
+    } 
+    return "--"
+  }
+
+  get img(): string {
+    if (this.index >= 0 && this.index < Object.keys(this.data).length) {
+      return this.data[this.index].img.toString();
+    } 
+    return this.data[0].img.toString();
   }
 }

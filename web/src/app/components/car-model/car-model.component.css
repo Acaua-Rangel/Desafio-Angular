@@ -1,3 +1,10 @@
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .card {
     min-width: 200px;
 }
@@ -9,4 +16,9 @@
     margin-right: 50px;
     flex-wrap: wrap;
     gap: 15px;
+}
+
+img {
+    padding-top: 30px;
+    max-width: 100vh;
 }

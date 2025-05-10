@@ -1,17 +1,20 @@
-<div class="d-flex select-car">
-    <div class="card" style="width: 18rem;">
-        <div class="card-body">
-            <h5 class="card-title">Veículo</h5>
-            <select class="form-select" aria-label="Default select example" id="car-model" (change)="onSelectChange($event)">
-                <option selected disabled>Selecione</option>
-                <option value="r">Ranger</option>
-                <option value="m">Mustang</option>
-                <option value="t">Territory</option>
-                <option value="b">Bronco Sport</option>
-            </select>
+<div class="content">
+    <div class="d-flex select-car">
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">Veículo</h5>
+                <select class="form-select" aria-label="Default select example" id="car-model" (change)="onSelectChange($event)">
+                    <option selected disabled>Selecione</option>
+                    <option value=0>Ranger</option>
+                    <option value=1>Mustang</option>
+                    <option value=2>Territory</option>
+                    <option value=3>Bronco Sport</option>
+                </select>
+            </div>
         </div>
+        <app-card title="Total de Vendas" [amount]="sells"></app-card>
+        <app-card title="Conectados" [amount]="conects"></app-card>
+        <app-card title="Update Software" [amount]="updates"></app-card>
     </div>
-    <app-card title="Total de Vendas" [amount]="sells"></app-card>
-    <app-card title="Conectados" [amount]="conects"></app-card>
-    <app-card title="Update Software" [amount]="updates"></app-card>
+    <img [src]="img" alt="">
 </div>
