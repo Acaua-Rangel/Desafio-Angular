@@ -1,59 +1,114 @@
-# Web
+Com base no seu `package.json` e no conteúdo do PDF do desafio, aqui está um modelo de `README.md` completo e profissional para seu projeto **Desafio Angular - Dashboard FORD**:
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.7.
+---
 
-## Development server
+````markdown
+# 🚗 Desafio Angular - Dashboard FORD
 
-To start a local development server, run:
+Este projeto é o resultado do desafio proposto na **Sprint 07 de Angular** da formação em programação Front-End, que consiste na criação de um dashboard interativo para a empresa FORD, utilizando **Angular** e **TypeScript**.
+
+## 🎯 Objetivo
+
+Desenvolver uma aplicação Angular com foco em componentes reativos e consumo de API REST, seguindo boas práticas de arquitetura e interatividade. O projeto simula um painel administrativo com funcionalidades de login, visualização de dados e gráficos relacionados aos veículos da empresa.
+
+---
+
+## 📂 Estrutura do Projeto
+
+O projeto está dividido em dois diretórios principais:
+
+- `web/`: Aplicação Angular responsável pelo front-end.
+- `api-angular-ford/`: Back-end em Node.js fornecido para simulação da API REST.
+
+---
+
+## 🚀 Funcionalidades
+
+### 🔐 Login
+- Formulário de autenticação com validação simples.
+- Usuário e senha fixos:  
+  - **Usuário**: `admin`  
+  - **Senha**: `123`
+
+### 🏠 Página Home
+- Boas-vindas personalizadas.
+- Opção de logout.
+- Imagem de fundo.
+- Link para o dashboard.
+
+### 📊 Dashboard
+- Campo de busca por modelo de veículo.
+- Cartões com:
+  - Total de vendas.
+  - Veículos conectados.
+  - Veículos com software atualizado.
+- Imagem do veículo selecionado.
+- Tabela com busca por código e exibição de dados detalhados.
+
+---
+
+## 🧰 Tecnologias Utilizadas
+
+- [Angular CLI 19.2.7](https://angular.io/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [RxJS](https://rxjs.dev/)
+- [Bootstrap](https://getbootstrap.com/)
+- [Node.js](https://nodejs.org/)
+- [Express.js](https://expressjs.com/)
+- [Concurrently](https://www.npmjs.com/package/concurrently)
+
+---
+
+## 🛠️ Instalação e Execução
+
+1. **Clone este repositório:**
 
 ```bash
-ng serve
-```
+git clone https://github.com/Acaua-Rangel/Desafio-Angular.git
+cd Desafio-Angular
+````
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+2. **Baixe e instale as dependências:**
 
 ```bash
-ng generate component component-name
+npm run build:api       # Clona a API
+npm run install         # Instala as dependências da API e do Front-end
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+3. **Inicie o projeto:**
 
 ```bash
-ng generate --help
+npm run start           # Inicia simultaneamente a API e o front-end
 ```
 
-## Building
+* Acesse o front-end em: `http://localhost:4200`
+* A API estará disponível em: `http://localhost:3001`
 
-To build the project run:
+---
 
-```bash
-ng build
-```
+## 📁 Endpoints Utilizados
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+* `GET /vehicle`: Lista de veículos
+* `GET /vehicleData`: Dados detalhados dos veículos
 
-## Running unit tests
+---
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+## ✅ Critérios Avaliados
 
-```bash
-ng test
-```
+* Uso correto de módulos, componentes e serviços Angular.
+* Implementação de diretivas como `*ngIf`, `*ngFor`, `ngModel`.
+* Integração com API REST.
+* Utilização de RxJS com operadores como `map`, `filter`, `debounceTime`, etc.
+* Boas práticas com TypeScript e Bootstrap.
 
-## Running end-to-end tests
+---
 
-For end-to-end (e2e) testing, run:
+## 📌 Observações
 
-```bash
-ng e2e
-```
+Este projeto foi desenvolvido com fins educacionais, com base na proposta da empresa FORD fornecida pela instituição.
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+---
 
-## Additional Resources
+## 🙋‍♂️ Autor
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Desenvolvido por [Acauã Rangel](https://github.com/Acaua-Rangel)
