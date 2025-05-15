@@ -34,9 +34,8 @@ export class HeaderComponent{
     event.preventDefault();
     
     // Limpa todos os itens relevantes
-    sessionStorage.removeItem("id");
-    sessionStorage.removeItem("nome");
-    sessionStorage.removeItem("email");
+    sessionStorage.clear();
+    localStorage.clear();
     
     // Força o redirecionamento
     this.router.navigate(['/login'])
