@@ -10,7 +10,7 @@
     "install": "concurrently \"npm run install:api\" \"npm run install:web\"",
     "start:api": "npm run start --prefix ./api-angular-ford",
     "start:web": "npm run start --prefix ./web",
-    "start": "concurrently \"npm run start:api\" \"npm run start:web\""
+    "start": "concurrently \"npm install -g concurrently\" \"npm run start:api\" \"npm run start:web\""
   },
   "repository": {
     "type": "git",
