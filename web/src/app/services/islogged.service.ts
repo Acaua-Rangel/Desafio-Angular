@@ -22,9 +22,6 @@ function verifyStorage(storage: Storage): boolean {
   const id = storage.getItem("id");
   const nome = storage.getItem("nome");
   const email = storage.getItem("email");
-  console.log(id);
-  console.log(nome);
-  console.log(email);
 
   if (id!=null && nome!=null && email!=null) {
     return true;

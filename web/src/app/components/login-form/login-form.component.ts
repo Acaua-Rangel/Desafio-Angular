@@ -18,10 +18,17 @@ export class LoginFormComponent {
     messsageError.style.display = `${show ? 'block' : 'none'}`;
   };
 
-  private saveUser(user: User): void {
-    sessionStorage.setItem("id", user.id.toString());
-    sessionStorage.setItem("nome", user.nome);
-    sessionStorage.setItem("email", user.email);
+  private saveUser(user: User, remeber:boolean): void {
+    if (remeber) {
+      localStorage.setItem("id", user.id.toString());
+      localStorage.setItem("nome", user.nome);
+      localStorage.setItem("email", user.email);
+    } else {
+      sessionStorage.setItem("id", user.id.toString());
+      sessionStorage.setItem("nome", user.nome);
+      sessionStorage.setItem("email", user.email);
+    }
+    
   }
 
   submit(event: Event): void {
@@ -29,6 +36,8 @@ export class LoginFormComponent {
 
     const login = (<HTMLInputElement>document.getElementById('login')).value;
     const password = (<HTMLInputElement>document.getElementById('password')).value;
+    const remeber = (<HTMLInputElement>document.getElementById('flexSwitchCheckDefault')).checked;
+    console.log(remeber);
 
     const body: LoginDTO = {
       nome: login,
@@ -41,7 +50,7 @@ export class LoginFormComponent {
     }).subscribe({
       next: (res) => {
         this.messageError(false);
-        this.saveUser(res as User);
+        this.saveUser(res as User, remeber);
         console.log(res);
         this.router.navigate(['/']);
       },
