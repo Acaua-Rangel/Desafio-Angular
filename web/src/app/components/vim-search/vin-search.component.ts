@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { vinDTO } from '../../dto/vin.dto';
 
 @Component({
@@ -10,6 +10,9 @@ import { vinDTO } from '../../dto/vin.dto';
 })
 export class VinSearchComponent {
   constructor(private http: HttpClient) {}
+
+  @Output() selectValue = new EventEmitter<number>();
+
   data: vinDTO = {
     "id": 0,
     "odometro": 0,
@@ -19,7 +22,7 @@ export class VinSearchComponent {
     "long": 0
   }
 
-  onInputChange(event: Event) {
+  onInputChange(event: Event): void {
     const inputElement = event.target as HTMLSelectElement;
     const inputValue = inputElement.value;
     
@@ -28,14 +31,14 @@ export class VinSearchComponent {
     }
   }
 
-  private fetchData(vin: string) {
+  private fetchData(vin: string): void {
     // Substitua pela sua URL de API
     const apiUrl = `http://localhost:3001/vehicleData`;
     
     this.http.post<vinDTO>(apiUrl, {"vin": vin}).subscribe({
       next: (response) => {
         this.data = response;
-        console.log(this.data);
+        this.chageCar(response.id);
       },
       error: (err) => {
         console.error('Erro na requisição:', err);
@@ -43,23 +46,28 @@ export class VinSearchComponent {
     });
   }
 
-  get odometer():string {
+  private chageCar(id: number): void {
+    console.log(id);
+    this.selectValue.emit(id);
+  }
+
+  get odometer(): string {
     return this.data.odometro.toString();
   }
 
-  get fuel():string {
+  get fuel(): string {
     return this.data.nivelCombustivel.toString();
   }
 
-  get status():string {
+  get status(): string {
     return this.data.status;
   }
 
-  get lat():string {
+  get lat(): string {
     return this.data.lat.toString();
   }
 
-  get long():string {
+  get long(): string {
     return this.data.long.toString();
   }
 }

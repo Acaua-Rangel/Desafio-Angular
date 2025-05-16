@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CardComponent } from '../card/card.component';
 import { HttpClient } from '@angular/common/http';
 import { vehicle } from '../../dto/vehicle.dto';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-car-model',
@@ -11,6 +12,8 @@ import { vehicle } from '../../dto/vehicle.dto';
 })
 export class CarModelComponent implements OnInit {
   constructor(private http: HttpClient) {}
+
+  @Input() form!: FormGroup;
 
   index = -1;
 

@@ -1,19 +1,14 @@
-Com base no seu `package.json` e no conteúdo do PDF do desafio, aqui está um modelo de `README.md` completo e profissional para seu projeto **Desafio Angular - Dashboard FORD**:
-
----
-
-````markdown
-# 🚗 Desafio Angular - Dashboard FORD
+# Desafio Angular - Dashboard FORD
 
 Este projeto é o resultado do desafio proposto na **Sprint 07 de Angular** da formação em programação Front-End, que consiste na criação de um dashboard interativo para a empresa FORD, utilizando **Angular** e **TypeScript**.
 
-## 🎯 Objetivo
+## Objetivo
 
 Desenvolver uma aplicação Angular com foco em componentes reativos e consumo de API REST, seguindo boas práticas de arquitetura e interatividade. O projeto simula um painel administrativo com funcionalidades de login, visualização de dados e gráficos relacionados aos veículos da empresa.
 
 ---
 
-## 📂 Estrutura do Projeto
+## Estrutura do Projeto
 
 O projeto está dividido em dois diretórios principais:
 
@@ -22,21 +17,21 @@ O projeto está dividido em dois diretórios principais:
 
 ---
 
-## 🚀 Funcionalidades
+## Funcionalidades
 
-### 🔐 Login
+### Login
 - Formulário de autenticação com validação simples.
 - Usuário e senha fixos:  
   - **Usuário**: `admin`  
   - **Senha**: `123`
 
-### 🏠 Página Home
+### Página Home
 - Boas-vindas personalizadas.
 - Opção de logout.
 - Imagem de fundo.
 - Link para o dashboard.
 
-### 📊 Dashboard
+### Dashboard
 - Campo de busca por modelo de veículo.
 - Cartões com:
   - Total de vendas.
@@ -47,7 +42,7 @@ O projeto está dividido em dois diretórios principais:
 
 ---
 
-## 🧰 Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
 - [Angular CLI 19.2.7](https://angular.io/)
 - [TypeScript](https://www.typescriptlang.org/)
@@ -59,7 +54,7 @@ O projeto está dividido em dois diretórios principais:
 
 ---
 
-## 🛠️ Instalação e Execução
+## Instalação e Execução
 
 1. **Clone este repositório:**
 
@@ -86,14 +81,14 @@ npm run start           # Inicia simultaneamente a API e o front-end
 
 ---
 
-## 📁 Endpoints Utilizados
+## Endpoints Utilizados
 
 * `GET /vehicle`: Lista de veículos
 * `GET /vehicleData`: Dados detalhados dos veículos
 
 ---
 
-## ✅ Critérios Avaliados
+## Critérios Avaliados
 
 * Uso correto de módulos, componentes e serviços Angular.
 * Implementação de diretivas como `*ngIf`, `*ngFor`, `ngModel`.
@@ -103,12 +98,6 @@ npm run start           # Inicia simultaneamente a API e o front-end
 
 ---
 
-## 📌 Observações
+## Observações
 
 Este projeto foi desenvolvido com fins educacionais, com base na proposta da empresa FORD fornecida pela instituição.
-
----
-
-## 🙋‍♂️ Autor
-
-Desenvolvido por [Acauã Rangel](https://github.com/Acaua-Rangel)
