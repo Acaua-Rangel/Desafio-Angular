@@ -37,7 +37,6 @@ export class LoginFormComponent {
     const login = (<HTMLInputElement>document.getElementById('login')).value;
     const password = (<HTMLInputElement>document.getElementById('password')).value;
     const remeber = (<HTMLInputElement>document.getElementById('flexSwitchCheckDefault')).checked;
-    console.log(remeber);
 
     const body: LoginDTO = {
       nome: login,
